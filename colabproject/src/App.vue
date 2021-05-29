@@ -8,14 +8,16 @@
     </div>
     <router-view />
     <modal-center />
+    <sidebar-right/>
   </div>
 </template>
 
 <script>
 import ModalCenter from "./components/Modaltest.vue";
+import SidebarRight from './components/sidebartest.vue';
 
 export default {
-  components: { ModalCenter },
+  components: { ModalCenter, SidebarRight },
 };
 </script>
 
