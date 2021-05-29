@@ -2,95 +2,158 @@
   <div class="sales">
     <b-container class="Sales Header">
       <b-row>
-        <b-col><h1>Sales <i>Grid</i></h1></b-col>
-        <b-col class="d-flex align-items-center">
-           {{ timeString }} test
-        </b-col>
+        <b-col
+          ><h1>Sales <i>Grid</i></h1></b-col
+        >
+        <b-col class="d-flex align-items-center"> {{ timeString }} test </b-col>
         <b-col class="d-flex align-items-center justify-content-end">
           <div>
-            <dropdown-bar-item v-for="(dd, key) in dropdownBar"
-                               v-bind="dd"
-                               :key="key"/>
+            <dropdown-bar-item
+              v-for="(dd, key) in dropdownBar"
+              v-bind="dd"
+              :key="key"
+            />
           </div>
         </b-col>
       </b-row>
-          </b-container>
-          <p class="border-top mb-4"></p>
-                  <b-row variant="transparent">
-    <b-col class="border mb-4" cols="12" md="8">
- <p/>
-   <b-row class=" text-center center row container-fluid">
-        <div class="row container-fluid">
-<div>
-  <b-list-group horizontal="md" class="mb-4 flex-fill">
-    <b-list-group-item  button class="mr-4 ml-4  mb-4">
-      <div class="text-left">Chicken Foot Soup</div>
-<div class="text-right">$2,000</div>
-    </b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left" >Dapibus ac facilisis in</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Morbi leo risus</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-   </b-list-group>
-</div>
-<div>
-  <b-list-group horizontal="md" class="mb-4 flex-fill">
-    <b-list-group-item  button class="mr-4 ml-4 mb-4">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left" >Dapibus ac facilisis in</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Morbi leo risus</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-   </b-list-group>
-</div>
-<div>
-  <b-list-group horizontal="md" class="mb-4 flex-fill">
-    <b-list-group-item  button class="mr-4 ml-4  mb-4">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left" >Dapibus ac facilisis in</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Morbi leo risus</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-   </b-list-group>
-</div>
-<div>
-  <b-list-group horizontal="md" class="mb-4 flex-fill">
-    <b-list-group-item  button class="mr-4 ml-4  mb-4">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left" >Dapibus ac facilisis in</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Morbi leo risus</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-   </b-list-group>
-</div>
-<div>
-  <b-list-group horizontal="md" class="mb-4 flex-fill">
-    <b-list-group-item  button class="mr-4 ml-4  mb-4">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left" >Dapibus ac facilisis in</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Morbi leo risus</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left">Cras justo odio</b-list-group-item>
-   </b-list-group>
-</div>
-
-  </div>
-
-  </b-row>
-
-    </b-col>
-    <b-col class="border" cols="6" md="4">
-      <p/>
-      <div>
-  <b-list-group horizontal="md" class="mb-2 flex-fill">
-    <b-list-group-item  button class="mr-4 text-center" >Customer</b-list-group-item>
-    <b-list-group-item  button class="mr-4  border-left text-center" >Table</b-list-group-item>
-       </b-list-group>
-</div>
-      <div class="table-gridcontainer">
-                    <b-table class="text-center" :items="filteredData" :fields="fields" :small="true">
-          <template #cell(extPrice)="{item}">
-            {{ formatCurrency(item.quantity * item.price) }}
-          </template>
-        </b-table>
-      </div>
-      <!-----
+    </b-container>
+    <p class="border-top mb-4"></p>
+    <b-row variant="transparent">
+      <b-col
+        class="border center bg-primary"
+        style="padding-right: 0px !important"
+      >
+        <p />
+        <b-row class="text-center center row container-fluid">
+          <b-list-group horizontal="md" class="row pl-4 flex-fill">
+            <b-list-group-item
+              rounded
+              button
+              class="col shadow-sm rounded mr-2"
+            >
+              <div class="text-left">Chicken Foot Soup</div>
+              <div class="text-right">$2,000</div>
+            </b-list-group-item>
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Dapibus ac facilisis in</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Morbi leo risus</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Cras justo odio</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Cras justo odio</b-list-group-item
+            >
+          </b-list-group>
+        </b-row>
+        <b-row class="text-center center mt-2 row container-fluid">
+          <b-list-group horizontal="md" class="row pl-4 flex-fill">
+            <b-list-group-item button class="col mr-2 rounded">
+              <div class="text-left">Chicken Foot Soup</div>
+              <div class="text-right">$2,000</div>
+            </b-list-group-item>
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Dapibus ac facilisis in</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Morbi leo risus</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Cras justo odio</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Cras justo odio</b-list-group-item
+            >
+          </b-list-group>
+        </b-row>
+        <b-row class="text-center center mt-2 row container-fluid">
+          <b-list-group horizontal="md" class="row pl-4 flex-fill">
+            <b-list-group-item button class="col mr-2 rounded">
+              <div class="text-left">Chicken Foot Soup</div>
+              <div class="text-right">$2,000</div>
+            </b-list-group-item>
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Dapibus ac facilisis in</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Morbi leo risus</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Cras justo odio</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Cras justo odio</b-list-group-item
+            >
+          </b-list-group>
+        </b-row>
+        <b-row class="text-center center mt-2 row container-fluid">
+          <b-list-group horizontal="md" class="row pl-4 flex-fill">
+            <b-list-group-item button class="col mr-2 rounded">
+              <div class="text-left">Chicken Foot Soup</div>
+              <div class="text-right">$2,000</div>
+            </b-list-group-item>
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Dapibus ac facilisis in</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Morbi leo risus</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Cras justo odio</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Cras justo odio</b-list-group-item
+            >
+          </b-list-group>
+        </b-row>
+        <b-row class="text-center center mt-2 mb-3 row container-fluid">
+          <b-list-group horizontal="md" class="row rounded pl-4 flex-fill">
+            <b-list-group-item button class="col rounded mr-2">
+              <div class="text-left">Chicken Foot Soup</div>
+              <div class="text-right">$2,000</div>
+            </b-list-group-item>
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Dapibus ac facilisis in</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Morbi leo risus</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Cras justo odio</b-list-group-item
+            >
+            <b-list-group-item button class="col mr-2 rounded border-left"
+              >Cras justo odio</b-list-group-item
+            >
+          </b-list-group>
+        </b-row>
+      </b-col>
+      <b-col class="border" cols="6" md="4">
+        <p />
+        <div>
+          <b-list-group horizontal="md" class="mb-2 flex-fill">
+            <b-list-group-item button class="mr-4 text-center"
+              >Customer</b-list-group-item
+            >
+            <b-list-group-item button class="mr-4 border-left text-center"
+              >Table</b-list-group-item
+            >
+          </b-list-group>
+        </div>
+        <div class="table-gridcontainer">
+          <b-table
+            class="text-center"
+            :items="filteredData"
+            :fields="fields"
+            :small="true"
+          >
+            <template #cell(extPrice)="{ item }">
+              {{ formatCurrency(item.quantity * item.price) }}
+            </template>
+          </b-table>
+        </div>
+        <!-----
       <div>
         <b-row>
           <b-col class="border-top">
@@ -113,18 +176,17 @@
           </b-col>
         </b-row>--->
         <div>
-                <b-row>
-          <b-col class="border-bottom bg-primary">
-          </b-col>
-          <b-col class="border-bottom text-right bg-primary">
-            <b style="color:green" ><font size="5" >Total</font></b>
-          </b-col>
+          <b-row>
+            <b-col class="border-bottom bg-primary"> </b-col>
             <b-col class="border-bottom text-right bg-primary">
-             <b style="color:green" ><font size="5" >$ 10,000</font></b>
-          </b-col>
-        </b-row>
-      </div>
-      <!----
+              <b style="color: green"><font size="5">Total</font></b>
+            </b-col>
+            <b-col class="border-bottom text-right bg-primary">
+              <b style="color: green"><font size="5">$ 10,000</font></b>
+            </b-col>
+          </b-row>
+        </div>
+        <!----
       <div>
   <b-list-group horizontal>
     <b-list-group-item button class="text-center">1</b-list-group-item>
@@ -149,16 +211,30 @@
     <b-list-group-item button class="text-center">0</b-list-group-item>
   </b-list-group>
 </div> --->
-<p/>
-<div>
-  <b-list-group horizontal="md" class="mb-4 flex-fill">
-    <b-list-group-item  button class="mr-4 mb-4 text-center" variant="danger">Delete</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left text-center" variant="info" >Ordgfger</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left text-center" variant="success">Pay</b-list-group-item>
-   </b-list-group>
-</div>
-    </b-col>
-          </b-row>
-    </div>
-
+        <p />
+        <div>
+          <b-list-group horizontal="md" class="mb-4 flex-fill">
+            <b-list-group-item
+              button
+              class="mr-4 mb-4 text-center"
+              variant="danger"
+              >Delete</b-list-group-item
+            >
+            <b-list-group-item
+              button
+              class="mr-4 mb-4 border-left text-center"
+              variant="info"
+              >Ordgfger</b-list-group-item
+            >
+            <b-list-group-item
+              button
+              class="mr-4 mb-4 border-left text-center"
+              variant="success"
+              >Pay</b-list-group-item
+            >
+          </b-list-group>
+        </div>
+      </b-col>
+    </b-row>
+  </div>
 </template>
