@@ -2,11 +2,22 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-          </div>
+      <router-link to="/about">Grid Issue</router-link> |
+      <router-link to="/problemone">Problem1</router-link> |
+      <router-link to="/problemtwo">Problem 2</router-link>
+    </div>
     <router-view />
+    <modal-center />
   </div>
 </template>
+
+<script>
+import ModalCenter from "./components/Modaltest.vue";
+
+export default {
+  components: { ModalCenter },
+};
+</script>
 
 <style>
 #app {
