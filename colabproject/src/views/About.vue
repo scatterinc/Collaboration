@@ -153,7 +153,7 @@
 <div>
   <b-list-group horizontal="md" class="mb-4 flex-fill">
     <b-list-group-item  button class="mr-4 mb-4 text-center" variant="danger">Delete</b-list-group-item>
-    <b-list-group-item  button class="mr-4 mb-4 border-left text-center" variant="info" >Order</b-list-group-item>
+    <b-list-group-item  button class="mr-4 mb-4 border-left text-center" variant="info" >Ordgfger</b-list-group-item>
     <b-list-group-item  button class="mr-4 mb-4 border-left text-center" variant="success">Pay</b-list-group-item>
    </b-list-group>
 </div>
