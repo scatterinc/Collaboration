@@ -24,110 +24,34 @@
         style="padding-right: 0px !important"
       >
         <p />
-        <b-row class="text-center center row container-fluid">
-          <b-list-group horizontal="md" class="row pl-4 flex-fill">
-            <b-list-group-item
-              rounded
-              button
-              class="col shadow-sm rounded mr-2"
-            >
-              <div class="text-left">Chicken Foot Soup</div>
-              <div class="text-right">$2,000</div>
-            </b-list-group-item>
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Dapibus ac facilisis in</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Morbi leo risus</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Cras justo odio</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Cras justo odio</b-list-group-item
-            >
-          </b-list-group>
-        </b-row>
-        <b-row class="text-center center mt-2 row container-fluid">
-          <b-list-group horizontal="md" class="row pl-4 flex-fill">
-            <b-list-group-item button class="col mr-2 rounded">
-              <div class="text-left">Chicken Foot Soup</div>
-              <div class="text-right">$2,000</div>
-            </b-list-group-item>
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Dapibus ac facilisis in</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Morbi leo risus</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Cras justo odio</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Cras justo odio</b-list-group-item
-            >
-          </b-list-group>
-        </b-row>
-        <b-row class="text-center center mt-2 row container-fluid">
-          <b-list-group horizontal="md" class="row pl-4 flex-fill">
-            <b-list-group-item button class="col mr-2 rounded">
-              <div class="text-left">Chicken Foot Soup</div>
-              <div class="text-right">$2,000</div>
-            </b-list-group-item>
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Dapibus ac facilisis in</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Morbi leo risus</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Cras justo odio</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Cras justo odio</b-list-group-item
-            >
-          </b-list-group>
-        </b-row>
-        <b-row class="text-center center mt-2 row container-fluid">
-          <b-list-group horizontal="md" class="row pl-4 flex-fill">
-            <b-list-group-item button class="col mr-2 rounded">
-              <div class="text-left">Chicken Foot Soup</div>
-              <div class="text-right">$2,000</div>
-            </b-list-group-item>
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Dapibus ac facilisis in</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Morbi leo risus</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Cras justo odio</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Cras justo odio</b-list-group-item
-            >
-          </b-list-group>
-        </b-row>
-        <b-row class="text-center center mt-2 mb-3 row container-fluid">
-          <b-list-group horizontal="md" class="row rounded pl-4 flex-fill">
-            <b-list-group-item button class="col rounded mr-2">
-              <div class="text-left">Chicken Foot Soup</div>
-              <div class="text-right">$2,000</div>
-            </b-list-group-item>
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Dapibus ac facilisis in</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Morbi leo risus</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Cras justo odio</b-list-group-item
-            >
-            <b-list-group-item button class="col mr-2 rounded border-left"
-              >Cras justo odio</b-list-group-item
-            >
-          </b-list-group>
-        </b-row>
+        <div class="mb-2 mt-4 ml-1">
+          <b-row
+            v-for="(row, n) in list"
+            :key="`row${n}`"
+            class="text-center center row container-fluid mb-2"
+          >
+            <b-list-group horizontal="md" class="row px-md-6 flex-fill">
+              <b-list-group-item
+                v-for="(item, key) in row"
+                :key="`item${key}`"
+                button
+                class="col mr-1 ml-1 rounded border shadow"
+                variant="'variant'"
+              >
+                <template v-if="item.left">
+                  <div class="text-left">{{ item.left }}</div>
+                  <div class="text-right">{{ item.right }}</div>
+                </template>
+                <span v-else> {{ item }} </span>
+              </b-list-group-item>
+            </b-list-group>
+                      </b-row>
+        </div>
+
+        <b-row class="text-center center row container-fluid"> </b-row>
+        <div>
+             <h1 style="color: red"><font size="5">I want to add vairant props to v-for function, so i can change color of bottom buttons</font></h1>
+            </div>
       </b-col>
       <b-col class="border" cols="6" md="4">
         <p />
@@ -238,3 +162,43 @@
     </b-row>
   </div>
 </template>
+<script>
+export default {
+  name: 'SalesGridItem',
+  data: () => ({
+    list: [
+      [
+        { left: 'Chicken Foot Soup', right: '$2,000', variant: 'info' },
+        'Dapibus ac facilisis in',
+        'Morbi leo risus',
+        'Cras justo odio',
+        'Cras justo odio'
+      ], [
+        { left: 'Chicken Foot Soup', right: '$2,000' },
+        'Dapibus ac facilisis in',
+        'Morbi leo risus',
+        'Cras justo odio',
+        'Cras justo odio'
+      ], [
+        { left: 'Chicken Foot Soup', right: '$2,000' },
+        'Dapibus ac facilisis in',
+        'Morbi leo risus',
+        'Cras justo odio',
+        'Cras justo odio'
+      ], [
+        { left: 'Chicken Foot Soup', right: '$2,000' },
+        'Dapibus ac facilisis in',
+        'Morbi leo risus',
+        'Cras justo odio',
+        'Cras justo odio'
+      ], [
+        { left: 'Chicken Foot Soup', right: '$2,000' },
+        'Dapibus ac facilisis in',
+        'Morbi leo risus',
+        'Cras justo odio',
+        'Cras justo odio'
+      ]
+    ]
+  })
+};
+</script>
