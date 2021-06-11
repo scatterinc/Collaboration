@@ -4,17 +4,18 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">Grid Issue</router-link> |
       <router-link to="/problemone">Problem1</router-link> |
-      <router-link to="/problemtwo">Problem 2</router-link>
+      <router-link to="/problemtwo">Problem 2</router-link> |
+      <router-link to="/problemthree">Problem 3</router-link> 
     </div>
     <router-view />
     <modal-center />
-    <sidebar-right/>
+    <sidebar-right />
   </div>
 </template>
 
 <script>
 import ModalCenter from "./components/Modaltest.vue";
-import SidebarRight from './components/sidebartest.vue';
+import SidebarRight from "./components/sidebartest.vue";
 
 export default {
   components: { ModalCenter, SidebarRight },

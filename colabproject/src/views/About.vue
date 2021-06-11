@@ -45,13 +45,18 @@
                 <span v-else> {{ item }} </span>
               </b-list-group-item>
             </b-list-group>
-                      </b-row>
+          </b-row>
         </div>
 
         <b-row class="text-center center row container-fluid"> </b-row>
         <div>
-             <h1 style="color: red"><font size="5">I want to add vairant props to v-for function, so i can change color of bottom buttons</font></h1>
-            </div>
+          <h1 style="color: red">
+            <font size="5"
+              >I want to add vairant props to v-for function, so i can change
+              color of bottom buttons</font
+            >
+          </h1>
+        </div>
       </b-col>
       <b-col class="border" cols="6" md="4">
         <p />
@@ -164,41 +169,45 @@
 </template>
 <script>
 export default {
-  name: 'SalesGridItem',
+  name: "SalesGridItem",
   data: () => ({
     list: [
       [
-        { left: 'Chicken Foot Soup', right: '$2,000', variant: 'info' },
-        'Dapibus ac facilisis in',
-        'Morbi leo risus',
-        'Cras justo odio',
-        'Cras justo odio'
-      ], [
-        { left: 'Chicken Foot Soup', right: '$2,000' },
-        'Dapibus ac facilisis in',
-        'Morbi leo risus',
-        'Cras justo odio',
-        'Cras justo odio'
-      ], [
-        { left: 'Chicken Foot Soup', right: '$2,000' },
-        'Dapibus ac facilisis in',
-        'Morbi leo risus',
-        'Cras justo odio',
-        'Cras justo odio'
-      ], [
-        { left: 'Chicken Foot Soup', right: '$2,000' },
-        'Dapibus ac facilisis in',
-        'Morbi leo risus',
-        'Cras justo odio',
-        'Cras justo odio'
-      ], [
-        { left: 'Chicken Foot Soup', right: '$2,000' },
-        'Dapibus ac facilisis in',
-        'Morbi leo risus',
-        'Cras justo odio',
-        'Cras justo odio'
-      ]
-    ]
-  })
+        { left: "Chicken Foot Soup", right: "$2,000", variant: "info" },
+        "Dapibus ac facilisis in",
+        "Morbi leo risus",
+        "Cras justo odio",
+        "Cras justo odio",
+      ],
+      [
+        { left: "Chicken Foot Soup", right: "$2,000" },
+        "Dapibus ac facilisis in",
+        "Morbi leo risus",
+        "Cras justo odio",
+        "Cras justo odio",
+      ],
+      [
+        { left: "Chicken Foot Soup", right: "$2,000" },
+        "Dapibus ac facilisis in",
+        "Morbi leo risus",
+        "Cras justo odio",
+        "Cras justo odio",
+      ],
+      [
+        { left: "Chicken Foot Soup", right: "$2,000" },
+        "Dapibus ac facilisis in",
+        "Morbi leo risus",
+        "Cras justo odio",
+        "Cras justo odio",
+      ],
+      [
+        { left: "Chicken Foot Soup", right: "$2,000" },
+        "Dapibus ac facilisis in",
+        "Morbi leo risus",
+        "Cras justo odio",
+        "Cras justo odio",
+      ],
+    ],
+  }),
 };
 </script>
