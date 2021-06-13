@@ -146,6 +146,9 @@ export default {
       }
       this.current = `${this.current}${number}`;
     },
+    clear() {
+      this.current = "";
+    },
   },
   data: () => ({
     previous: null,
