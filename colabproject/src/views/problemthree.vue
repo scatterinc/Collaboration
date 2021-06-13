@@ -62,7 +62,7 @@
                   class="bg-light border shadow text-right ml-3 mb-3"
                   md="11"
                 >
-                  <div class="display">{{current || '0.00'}}</div>
+                  <div class="display">{{ current || "0.00" }}</div>
                 </b-col>
               </b-row>
               <b-row
@@ -173,12 +173,12 @@ export default {
         { paynum: "$20", type: "USD", number: "20" },
       ],
       [
-        { paynum: ".", type: "number", number: "dot" },
+        { paynum: ".", type: "number", number: "." },
         { paynum: "0", type: "number", number: "0" },
-        { paynum: "X", inconz: "th" },
+        { paynum: "X", type: "text", number: "clear" },
         { paynum: "$55", type: "USD" },
       ],
     ],
-   }),
+  }),
 };
 </script>
