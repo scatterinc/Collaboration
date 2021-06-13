@@ -62,7 +62,7 @@
                   class="bg-light border shadow text-right ml-3 mb-3"
                   md="11"
                 >
-                  {{ numFormatted }}
+                  <div class="display">{{current || '0.00'}}</div>
                 </b-col>
               </b-row>
               <b-row
@@ -83,7 +83,7 @@
                   >
                     <template v-if="item.paynum">
                       <div class="text-center">
-                        <h4 @click="formatNum(item)">
+                        <h4 @click="append(item.number)">
                           {{ item.paynum }}
                         </h4>
                       </div>
@@ -139,43 +139,46 @@
 export default {
   name: "SalesGridPay",
   methods: {
-    formatNum(data) {
-      let string = ``;
-      if (data.type == "number") {
-        string = `0.0${data.paynum}`;
-      } else string = data.paynum;
-      return (this.numFormatted = string);
+    append(number) {
+      if (this.operatorClicked) {
+        this.current = "";
+        this.operatorClicked = false;
+      }
+      this.current = `${this.current}${number}`;
     },
   },
-  created() {},
   data: () => ({
+    previous: null,
+    current: "",
+    operator: null,
+    operatorClicked: false,
+
     list: [
       [
-        { paynum: "1", type: "number" },
-        { paynum: "2", type: "number" },
-        { paynum: "3", type: "number" },
-        { paynum: "$5", type: "USD" },
+        { paynum: "1", type: "number", number: "1" },
+        { paynum: "2", type: "number", number: "2" },
+        { paynum: "3", type: "number", number: "3" },
+        { paynum: "$5", type: "USD", number: "5" },
       ],
       [
-        { paynum: "4", type: "number" },
-        { paynum: "5", type: "number" },
-        { paynum: "6", type: "number" },
-        { paynum: "$10", type: "USD" },
+        { paynum: "4", type: "number", number: "4" },
+        { paynum: "5", type: "number", number: "5" },
+        { paynum: "6", type: "number", number: "6" },
+        { paynum: "$10", type: "USD", number: "10" },
       ],
       [
-        { paynum: "7", type: "number" },
-        { paynum: "8", type: "number" },
-        { paynum: "9", type: "number" },
-        { paynum: "$20", type: "USD" },
+        { paynum: "7", type: "number", number: "7" },
+        { paynum: "8", type: "number", number: "8" },
+        { paynum: "9", type: "number", number: "9" },
+        { paynum: "$20", type: "USD", number: "20" },
       ],
       [
-        { paynum: ".", type: "number" },
-        { paynum: "0", type: "number" },
+        { paynum: ".", type: "number", number: "dot" },
+        { paynum: "0", type: "number", number: "0" },
         { paynum: "X", inconz: "th" },
         { paynum: "$55", type: "USD" },
       ],
     ],
-    numFormatted: 0.0,
-  }),
+   }),
 };
 </script>
