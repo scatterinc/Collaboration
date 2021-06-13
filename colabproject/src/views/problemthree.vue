@@ -70,10 +70,7 @@
                 :key="`row${n}`"
                 class="text-center center row container-fluid mb-2"
               >
-                <b-list-group
-                  horizontal="md"
-                  class="row px-md-6 flex-fill ml-1"
-                >
+                <b-list-group horizontal="md" class="row px-md-6 flex-fill ml-1">
                   <b-list-group-item
                     v-for="(item, key) in row"
                     :key="`item${key}`"
@@ -139,15 +136,20 @@
 export default {
   name: "SalesGridPay",
   methods: {
+    clear() {},
     append(number) {
       if (this.operatorClicked) {
         this.current = "";
         this.operatorClicked = false;
       }
-      this.current = `${this.current}${number}`;
-    },
-    clear() {
-      this.current = "";
+      /* this will check if the number is 150 */
+      if (number == 150) {
+        /* if it is actually 150 , it will clear */
+        this.current = "";
+      } else {
+        /* if its not it will print the number */
+        this.current = `${this.current}${number}`;
+      }
     },
   },
   data: () => ({
@@ -178,7 +180,7 @@ export default {
       [
         { paynum: ".", type: "number", number: "." },
         { paynum: "0", type: "number", number: "0" },
-        { paynum: "X", type: "text", number: "clear" },
+        { paynum: "X", type: "number", number: "150" },
         { paynum: "$55", type: "USD" },
       ],
     ],
