@@ -5,7 +5,8 @@
       <router-link to="/about">Grid Issue</router-link> |
       <router-link to="/problemone">Problem1</router-link> |
       <router-link to="/problemtwo">Problem 2</router-link> |
-      <router-link to="/problemthree">Problem 3</router-link> 
+      <router-link to="/problemthree">Problem 3</router-link> |
+      <router-link to="/problemfour">Problem 4</router-link> |
     </div>
     <router-view />
     <modal-center />

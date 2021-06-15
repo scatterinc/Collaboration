@@ -70,7 +70,10 @@
                 :key="`row${n}`"
                 class="text-center center row container-fluid mb-2"
               >
-                <b-list-group horizontal="md" class="row px-md-6 flex-fill ml-1">
+                <b-list-group
+                  horizontal="md"
+                  class="row px-md-6 flex-fill ml-1"
+                >
                   <b-list-group-item
                     v-for="(item, key) in row"
                     :key="`item${key}`"
@@ -143,13 +146,16 @@ export default {
         this.operatorClicked = false;
       }
       /* this will check if the number is 150 */
-      if (number == 150) {
+      if (number === "clear") {
         /* if it is actually 150 , it will clear */
         this.current = "";
       } else {
         /* if its not it will print the number */
         this.current = `${this.current}${number}`;
       }
+     /* if Typeof(number) === "USD" {
+        this.current = `${number * number}`;
+      }*/
     },
   },
   data: () => ({
@@ -180,8 +186,8 @@ export default {
       [
         { paynum: ".", type: "number", number: "." },
         { paynum: "0", type: "number", number: "0" },
-        { paynum: "X", type: "number", number: "150" },
-        { paynum: "$55", type: "USD" },
+        { paynum: "X", type: "number", number: "clear" },
+        { paynum: "$55", type: "USD", number: "55" },
       ],
     ],
   }),
