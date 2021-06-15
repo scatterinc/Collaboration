@@ -6,65 +6,20 @@
       <b-col class="text-center" cols="2">cost</b-col>
       <b-col class="text-center" cols="2">Ext Cost</b-col>
     </b-row>
-    <b-row class="mb-2">
+    <b-row v-for="item in createOrder.orderItem" :key="item.id" class="mb-2">
       <b-col class="text-center" cols="5">
-        <b-input />
+        <b-input v-model="item.itemName" :disabled="true" />
       </b-col>
       <b-col class="text-center" cols="2">
-        <b-input />
+        <b-form-input
+          placeholder="Pull Number"
+          type="number"
+          v-model="item.quantity"
+          v-on:keyup="changedQuantity(item)"
+        ></b-form-input>
       </b-col>
-      <b-col class="text-center" cols="2">$20</b-col>
-      <b-col class="text-center" cols="2">{{ RecipeExtCost }}</b-col>
-    </b-row>
-    <b-row class="mb-2">
-      <b-col class="text-center" cols="5">
-        <b-input />
-      </b-col>
-      <b-col class="text-center" cols="2">
-        <b-input />
-      </b-col>
-      <b-col class="text-center" cols="2">$20</b-col>
-      <b-col class="text-center" cols="2">{{ RecipeExtCost }}</b-col>
-    </b-row>
-    <b-row class="mb-2">
-      <b-col class="text-center" cols="5">
-        <b-input />
-      </b-col>
-      <b-col class="text-center" cols="2">
-        <b-input />
-      </b-col>
-      <b-col class="text-center" cols="2">$20</b-col>
-      <b-col class="text-center" cols="2">{{ RecipeExtCost }}</b-col>
-    </b-row>
-    <b-row class="mb-2">
-      <b-col class="text-center" cols="5">
-        <b-input />
-      </b-col>
-      <b-col class="text-center" cols="2">
-        <b-input />
-      </b-col>
-      <b-col class="text-center" cols="2">$20</b-col>
-      <b-col class="text-center" cols="2">{{ RecipeExtCost }}</b-col>
-    </b-row>
-    <b-row class="mb-2">
-      <b-col class="text-center" cols="5">
-        <b-input />
-      </b-col>
-      <b-col class="text-center" cols="2">
-        <b-input />
-      </b-col>
-      <b-col class="text-center" cols="2">$20</b-col>
-      <b-col class="text-center" cols="2">{{ RecipeExtCost }}</b-col>
-    </b-row>
-    <b-row class="mb-2">
-      <b-col class="text-center" cols="5">
-        <b-input />
-      </b-col>
-      <b-col class="text-center" cols="2">
-        <b-input />
-      </b-col>
-      <b-col class="text-center" cols="2">$20</b-col>
-      <b-col class="text-center" cols="2">{{ RecipeExtCost }}</b-col>
+      <b-col class="text-center" cols="2">${{ item.cost }}</b-col>
+      <b-col class="text-center" cols="2"> ${{ item.totalAmount }} </b-col>
     </b-row>
     <a class="border-top" />
     <b-row class="mb-1">
@@ -74,8 +29,73 @@
         ><b>Total Cost</b></b-col
       >
       <b-col class="text-right" cols="3" style="color: red"
-        ><b>$25,000</b></b-col
+        ><b>${{ createOrder.totalAmountOrderItem }}</b></b-col
       >
     </b-row>
   </div>
 </template>
+<script>
+export default {
+  watch: {},
+  methods: {
+    loadData() {},
+    changedQuantity(item) {
+      this.totalAmountItem(item);
+    },
+    totalAmountItem(item) {
+      this.createOrder.orderItem.forEach((element) => {
+        if (element.id == item.id) {
+          element.quantity = item.quantity;
+          element.totalAmount = parseInt(item.quantity) * item.cost;
+          this.createOrder.totalAmountOrderItem += element.totalAmount;
+        }
+      });
+    },
+  },
+  data() {
+    return {
+      changeQuantity: null,
+      createOrder: {
+        totalAmountOrderItem: null,
+        orderItem: [
+          {
+            id: 1,
+            itemName: "Canon lens 20mm",
+            quantity: null,
+            cost: 20,
+            totalAmount: 0,
+          },
+          {
+            id: 2,
+            itemName: "Canon lens 30mm",
+            quantity: null,
+            cost: 30,
+            totalAmount: 0,
+          },
+          {
+            id: 3,
+            itemName: "Canon lens 40mm",
+            quantity: null,
+            cost: 40,
+            totalAmount: 0,
+          },
+          {
+            id: 4,
+            itemName: "Canon lens 50mm",
+            quantity: null,
+            cost: 50,
+            totalAmount: 0,
+          },
+          {
+            id: 5,
+            itemName: "Canon lens 60mm",
+            quantity: null,
+            cost: 60,
+            totalAmount: 0,
+          },
+        ],
+      },
+    };
+  },
+};
+</script>
