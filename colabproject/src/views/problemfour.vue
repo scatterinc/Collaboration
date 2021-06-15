@@ -13,6 +13,7 @@
       <b-col class="text-center" cols="2">
         <b-form-input
           placeholder="Pull Number"
+          min="0"
           type="number"
           v-model="item.quantity"
           v-on:keyup="changedQuantity(item)"
@@ -28,7 +29,7 @@
       <b-col class="text-right" cols="4" style="color: red"
         ><b>Total Cost</b></b-col
       >
-      <b-col class="text-right" cols="3" style="color: red"
+      <b-col class="text-right" cols="3" style="color: red" placeholder="0.00"
         ><b>${{ createOrder.totalAmountOrderItem }}</b></b-col
       >
     </b-row>
@@ -46,7 +47,7 @@ export default {
       this.createOrder.orderItem.forEach((element) => {
         if (element.id == item.id) {
           element.quantity = item.quantity;
-          element.totalAmount = parseInt(item.quantity) * item.cost;
+          element.totalAmount = parseFloat(item.quantity) * item.cost;
           this.createOrder.totalAmountOrderItem += element.totalAmount;
         }
       });
